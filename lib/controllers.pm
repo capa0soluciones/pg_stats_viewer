@@ -140,7 +140,7 @@ sub stat {
     my %db  = map { $_->{oid} => $_->{datname} } @{ $db_stat->databases() };
     for my $item (@{ $ret_stat->{data} }) {
         $item->{avgtime}    = round_float($item->{avgtime}, 5);
-        $item->{total_time} = round_float($item->{total_time}, 2);
+        $item->{total_exec_time} = round_float($item->{total_exec_time}, 2);
         if ($item->{shared_blks_hit_percent}) {
             $item->{shared_blks_hit_percent} = round_float($item->{shared_blks_hit_percent}, 2);
         }

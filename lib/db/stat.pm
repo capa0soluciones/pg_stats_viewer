@@ -94,7 +94,7 @@ sub fields_cfg {
         qw( userid dbid query ),
         'avgtime',
         'calls',
-        'total_time',
+        'total_exec_time',
         'rows',
         'rows_per_call',
         'shared_blks_hit_percent',
@@ -115,7 +115,7 @@ sub fields_cfg {
     for (@f) {
         my $conf = { name => $_ };
         if ($_ eq 'avgtime') {
-            $conf->{select} = "COALESCE(total_time / NULLIF(calls,0), 0)";
+            $conf->{select} = "COALESCE(total_exec_time / NULLIF(calls,0), 0)";
         }
         if ($_ eq 'rows_per_call') {
             $conf->{select} = "COALESCE(rows / NULLIF(calls,0), 0)";

@@ -105,7 +105,7 @@
 
         "scrollCollapse": true,
         "sorting": [
-            ['5', /* total_time */ 'desc'] // default sorting
+            ['5', /* total_exec_time */ 'desc'] // default sorting
         ],
         "columns": aoColumns,
         language: {
